@@ -53,6 +53,7 @@ h1 {
   text-shadow: 0 4px 4px var(--dark-grey);
   top: 75px;
   position: fixed;
+  opacity: 0.8;
 }
 
 p {
@@ -65,7 +66,7 @@ p {
   align-items: center;
   justify-content: center;
   position: relative;
-  margin: auto;
+  margin: 15% auto 0;
   height: 300px;
   width: 300px;
   transform: scale(1);
