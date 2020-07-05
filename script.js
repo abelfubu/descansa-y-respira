@@ -9,14 +9,14 @@ const holdTime = totalTime / 5;
 
 //Animaciones
 const breathAnimation = () => {
-  text.innerText = 'Inspira';
+  text.innerText = 'INSPIRA';
   container.className = 'container grow';
 
   setTimeout(() => {
-    text.innerText = 'Aguanta';
+    text.innerText = 'AGUANTA';
 
     setTimeout(() => {
-      text.innerText = 'Espira';
+      text.innerText = 'ESPIRA';
       container.className = 'container shrink';
     }, holdTime); //La pausa entre inspiración y espiración
   }, breatheTime);
@@ -29,8 +29,9 @@ setInterval(() => {
 
 // Animación del Mouse
 document.addEventListener('mousemove', event => {
-  let upX = event.pageX;
-  let upY = event.pageY;
-  pointer.style.top = `${upY - 100}px`;
-  pointer.style.left = `${upX - 100}px`;
+  const docEl = document.documentElement.style;
+  docEl.setProperty('--cursorX', `${event.pageX}px`);
+  docEl.setProperty('--cursorY', `${event.pageY}px`);
+  pointer.style.left = `${event.pageX}px`;
+  pointer.style.top = `${event.pageY}px`;
 });
