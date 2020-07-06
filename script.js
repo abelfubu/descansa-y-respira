@@ -30,8 +30,10 @@ setInterval(() => {
 // Animación del Mouse
 document.addEventListener('mousemove', event => {
   const docEl = document.documentElement.style;
-  docEl.setProperty('--cursorX', `${event.pageX}px`);
-  docEl.setProperty('--cursorY', `${event.pageY}px`);
-  pointer.style.left = `${event.pageX}px`;
-  pointer.style.top = `${event.pageY}px`;
+  const X = event.pageX;
+  const Y = event.pageY;
+  docEl.setProperty('--cursorX', `${X}px`);
+  docEl.setProperty('--cursorY', `${Y}px`);
+  pointer.style.left = `${X}px`;
+  pointer.style.top = `${Y}px`;
 });

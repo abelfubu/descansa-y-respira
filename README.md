@@ -22,10 +22,13 @@ Como podrás ver en el proyecto mismo, mis objetivos eran utilizar algunos nuevo
 
 ```javascript
 document.addEventListener('mousemove', event => {
-  let upX = event.pageX;
-  let upY = event.pageY;
-  pointer.style.top = `${upY - 100}px`;
-  pointer.style.left = `${upX - 100}px`;
+  const docEl = document.documentElement.style;
+  const X = event.pageX;
+  const Y = event.pageY;
+  docEl.setProperty('--cursorX', `${X}px`);
+  docEl.setProperty('--cursorY', `${Y}px`);
+  pointer.style.left = `${X}px`;
+  pointer.style.top = `${Y}px`;
 });
 ```
 
